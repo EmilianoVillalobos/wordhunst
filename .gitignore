@@ -1,0 +1,10 @@
+venv311/
+__pycache__/
+*.pyc
+
+dataset/
+*.zip
+
+models/
+
+.DS_Store
