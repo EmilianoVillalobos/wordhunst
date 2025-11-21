@@ -2,9 +2,7 @@ import json
 import time
 import pyautogui
 import cv2
-import easyocr
 import tensorflow as tf
-import os
 import numpy as np
 from pynput import keyboard
 from Quartz.CoreGraphics import (
@@ -33,7 +31,6 @@ DRAG_SEGMENT_STEPS = 4
 SLEEP_BETWEEN_LETTERS = 0.005
 SLEEP_BETWEEN_WORDS = 0.02
 WORD_LIST_CACHE = None
-READER = easyocr.Reader(["en"], gpu=False)
 
 IMG_SIZE = 32  # same as in train_cnn.py
 
@@ -413,8 +410,8 @@ if __name__ == "__main__":
     while True:
         command = input(
             "Enter 'm' to (re)calibrate the board,\n"
-            "or enter the 4 rows of letters as 'abcd efgh ijkl mnop': \n"
-            "or enter 't' for OCR"
+            "or enter the 4 rows of letters as 'abcd efgh ijkl mnop', \n"
+            "or enter 't' for OCR: \n"
         ).strip()
         if command == 'm':
             board_geometry = calibrate_board()
